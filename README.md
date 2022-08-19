@@ -14,3 +14,14 @@ We define its robustness as the ratio between its IoU on degraded images and its
   - python 3
   - torch>=1.2.0
 ## How to use
+### 1. Standard train/test
+Each model is trained on clean images with an SNR of 8. --model can be 'FCNs', 'UNet', 'SegNet', 'simple_unet', 'UNet_3', 'DeepLab', 'PSPNet' and 'ICNet'. The weights for each training  will be saved in 'checkpoints/model(for example, UNet)/save_path/'. The default batch size is 4.
+
+    python Standard_Train.py --direction AtoB --train_dir data/mito/train/  --val_dir data/mito/val/  --save_pth trained_on_mito/ --gpu 1 --model UNet --norm std --lr 0.01 --epochs 500
+
+Segmentation results  will be saved in 'results/model(for example, UNet)/load_path/test_dir/'. if '--best' is True, the best weights will be selected.
+
+    python Standard_Test.py --direction AtoB --test_dir data/mito/test/ --load_pth trained_on_mito/ --gpu 0 --model UNet --norm std  --best True
+    
+### 2. Adversarial train/test
+    
