@@ -29,6 +29,6 @@ The test procedure is consistent with standard test, degraded images  will be lo
     python Standard_Test.py --direction AtoB --test_dir data/mito/degraded_data/ --load_pth Gauss_trained_on_mito/ --gpu 0 --model UNet --norm std  --best True
 ### 3. Adversarial train/test
     python Adversarial_Train.py --direction AtoB --train_dir data/mito/train/  --val_dir data/mito/val/  --save_pth PGD_trained_on_mito/ --gpu 1 --model UNet --norm std --lr 0.01 --epochs 500
-'--attack' can be 'FGSM', 'I-FGSM', 'PGD'.
+'--attack' can be 'FGSM', 'I-FGSM' or 'PGD'.
 
     python Adversarial_Test.py --direction AtoB  --load_pth PDG_trained_on_mito/ --gpu 1 --model UNet --norm std  --best  1 --attack I-FGSM
