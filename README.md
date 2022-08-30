@@ -33,4 +33,4 @@ python Standard_Test.py --direction AtoB --test_dir data/mito/degraded_data/ --l
     python Adversarial_Train.py --direction AtoB --train_dir data/mito/train/  --val_dir data/mito/val/  --save_pth PGD_trained_on_mito/ --gpu 1 --model UNet --norm std --lr 0.01 --epochs 500
 '--attack' can be 'FGSM', 'I-FGSM' or 'PGD'.
 
-    python Adversarial_Test.py --direction AtoB  --load_pth PDG_trained_on_mito/ --gpu 1 --model UNet --norm std  --best  1 --attack I-FGSM
+    python Adversarial_Test.py --direction AtoB  --load_pth PGD_trained_on_mito/ --test_dir data/mito/test/ --gpu 1 --model UNet --norm std  --best  True --attack I-FGSM
