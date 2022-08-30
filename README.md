@@ -34,3 +34,4 @@ python Standard_Test.py --direction AtoB --test_dir data/mito/degraded_data/ --l
 '--attack' can be 'FGSM', 'I-FGSM' or 'PGD'.
 
     python Adversarial_Test.py --direction AtoB  --load_pth PGD_trained_on_mito/ --test_dir data/mito/test/ --gpu 1 --model UNet --norm std  --best  True --attack I-FGSM
+ 
