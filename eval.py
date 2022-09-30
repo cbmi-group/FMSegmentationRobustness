@@ -38,7 +38,7 @@ def custom_pspnet_miou(logits, targets):
 def eval_net(net, loader, device):
     """Evaluation without the densecrf with the dice coefficient"""
     net.eval()
-    mask_type = torch.float32 if net.output_c == 1 else torch.long
+    mask_type = torch.float32
     # print('mask_type:', mask_type)
     # mask_type = torch.long
     n_val = len(loader)  # the number of batch
