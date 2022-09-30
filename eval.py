@@ -57,7 +57,7 @@ def eval_net(net, loader, device):
                 pred = F.softmax(mask_pred, dim=1)
                 # probs = torch.argmax(probs, dim=1, keepdim=True)
                 pred = pred[:, 1:2, :, :].float()
-
+                pred = (pred > 0.5).float()
             else:
                 pred = torch.sigmoid(mask_pred)
                 pred = (pred > 0.5).float()
